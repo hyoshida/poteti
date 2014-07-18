@@ -1,4 +1,5 @@
 require 'slim'
+require 'devise'
 
 module Poteti
   class Engine < ::Rails::Engine
