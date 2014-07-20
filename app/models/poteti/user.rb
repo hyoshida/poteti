@@ -11,5 +11,7 @@ module Poteti
       validatable
     )
     devise(*DEVISE_OPTIONS)
+
+    has_many :tips
   end
 end
