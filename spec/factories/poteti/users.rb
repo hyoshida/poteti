@@ -1,5 +1,6 @@
 FactoryGirl.define do
   factory :poteti_user, class: Poteti::User do
+    name 'john'
     email 'john@example.com'
     password 'password'
 

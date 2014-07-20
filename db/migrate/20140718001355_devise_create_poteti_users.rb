@@ -1,6 +1,8 @@
 class DeviseCreatePotetiUsers < ActiveRecord::Migration
   def change
     create_table(:poteti_users) do |t|
+      t.string :name, null: false
+
       ## Database authenticatable
       t.string :email, null: false
       t.string :encrypted_password, null: false
@@ -33,6 +35,7 @@ class DeviseCreatePotetiUsers < ActiveRecord::Migration
       t.timestamps
     end
 
+    add_index :poteti_users, :name, unique: true
     add_index :poteti_users, :email, unique: true
     add_index :poteti_users, :reset_password_token, unique: true
     # add_index :poteti_users, :confirmation_token, unique: true

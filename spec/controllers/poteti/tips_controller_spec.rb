@@ -6,7 +6,7 @@ describe Poteti::TipsController do
   describe "GET 'show'" do
     let(:user) { FactoryGirl.create(:poteti_user, :with_tip) }
     let(:tip) { user.tips.first }
-    let(:request) { poteti_get :show, id: tip.id }
+    let(:request) { poteti_get :show, user_name: user.name, id: tip.id }
 
     it { expect(response).to be_success }
 

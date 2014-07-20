@@ -5,10 +5,10 @@ describe 'Routes for tips' do
   let(:tip) { user.tips.first }
 
   it 'routes to tips' do
-    expect(get("/users/#{user.id}/tips/#{tip.id}")).to route_to(
+    expect(get("/users/#{user.name}/tips/#{tip.id}")).to route_to(
       controller: 'poteti/tips',
       action: 'show',
-      user_id: user.id.to_s,
+      user_name: user.name,
       id: tip.id.to_s
     )
   end

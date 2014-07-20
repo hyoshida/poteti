@@ -5,7 +5,7 @@ describe Poteti::UsersController do
 
   describe "GET 'show'" do
     let(:user) { FactoryGirl.create(:poteti_user) }
-    let(:request) { poteti_get :show, id: user.id }
+    let(:request) { poteti_get :show, name: user.name }
 
     it { expect(response).to be_success }
 
