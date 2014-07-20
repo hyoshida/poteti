@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  mount Poteti::Engine => '/poteti'
+  mount Poteti::Engine => '/'
 end
