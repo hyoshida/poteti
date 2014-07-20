@@ -2,7 +2,7 @@ module Poteti
   class User < ActiveRecord::Base
     # Include default devise modules. Others available are:
     # :confirmable, :lockable, :timeoutable and :omniauthable
-    devise *%i(
+    DEVISE_OPTIONS = %i(
       database_authenticatable
       registerable
       recoverable
@@ -10,5 +10,6 @@ module Poteti
       trackable
       validatable
     )
+    devise(*DEVISE_OPTIONS)
   end
 end
