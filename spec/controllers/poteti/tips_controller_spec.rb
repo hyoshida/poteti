@@ -1,13 +1,18 @@
-describe Poteti::UsersController do
+describe Poteti::TipsController do
   render_views
 
   before { request }
 
   describe "GET 'show'" do
-    let(:user) { FactoryGirl.create(:poteti_user) }
-    let(:request) { poteti_get :show, name: user.name }
+    let(:user) { FactoryGirl.create(:poteti_user, :with_tip) }
+    let(:tip) { user.tips.first }
+    let(:request) { poteti_get :show, user_name: user.name, id: tip.id }
 
     it { expect(response).to be_success }
+
+    it 'assigns @tip' do
+      expect(assigns(:tip)).to eq(tip)
+    end
 
     it 'assigns @user' do
       expect(assigns(:user)).to eq(user)

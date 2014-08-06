@@ -12,7 +12,8 @@ AsciiComments:
 
 # C: Method has too many lines.
 Style/MethodLength:
-  Max: 15
+  Exclude:
+    - db/migrate/*
 
 # Ignore files.
 AllCops:
