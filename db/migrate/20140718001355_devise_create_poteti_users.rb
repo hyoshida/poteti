@@ -33,12 +33,12 @@ class DeviseCreatePotetiUsers < ActiveRecord::Migration
       # t.datetime :locked_at
 
       t.timestamps
-    end
 
-    add_index :poteti_users, :name, unique: true
-    add_index :poteti_users, :email, unique: true
-    add_index :poteti_users, :reset_password_token, unique: true
-    # add_index :poteti_users, :confirmation_token, unique: true
-    # add_index :poteti_users, :unlock_token, unique: true
+      t.index :name, unique: true
+      t.index :email, unique: true
+      t.index :reset_password_token, unique: true
+      # t.index :confirmation_token, unique: true
+      # t.index :unlock_token, unique: true
+    end
   end
 end
