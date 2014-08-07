@@ -1,5 +1,6 @@
 require 'slim'
 require 'devise'
+require 'activeadmin'
 
 module Poteti
   class Engine < ::Rails::Engine
