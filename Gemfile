@@ -1,4 +1,4 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
 # Declare your gem's dependencies in poteti.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
@@ -12,3 +12,6 @@ gemspec
 
 # To use debugger
 # gem 'debugger'
+
+gem 'sass-rails', github: 'rails/sass-rails'
+gem 'activeadmin', github: 'gregbell/active_admin'
