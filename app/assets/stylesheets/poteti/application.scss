@@ -1,0 +1,79 @@
+//= require_tree .
+//= require_self
+
+@import 'bootstrap-sass';
+
+body {
+  padding-top: 70px;
+}
+
+header {
+  @extend .navbar;
+  @extend .navbar-default;
+  @extend .navbar-fixed-top;
+
+  nav {
+    @extend .container;
+    display: block;
+
+    h1 {
+      @extend .navbar-header;
+      margin: 0;
+
+      & > a {
+        @extend .navbar-brand;
+      }
+    }
+
+    & > ul {
+      @extend .nav;
+      @extend .navbar-nav;
+
+      li.icon > a {
+        $font-size: 14px;
+        $font-size-offset: 3px;
+        $padding: 15px;
+
+        padding-top: $padding - ($font-size-offset * 2);
+
+        &:before {
+          margin-right: 5px;
+          font-size: $font-size + ($font-size-offset * 2);
+          top: $font-size-offset + 1px;
+          position: relative;
+        }
+
+        & > .caret {
+          margin-left: 5px;
+        }
+      }
+
+      li.config > a:before {
+        @extend .glyphicon;
+        @extend .glyphicon-cog;
+      }
+    }
+
+    & > .signup {
+      @extend .nav;
+      @extend .navbar-nav;
+      @extend .navbar-right;
+
+      & > a {
+        $border: 1px;
+        $padding-top-bottom: 6px + $border;
+        $navber-link-padding: 15px;
+        margin: ($navber-link-padding - $padding-top-bottom) ($navber-link-padding - $border);
+      }
+    }
+  }
+}
+
+.signup > a {
+  @extend .btn;
+  @extend .btn-danger;
+
+  .jumbotron & {
+    @extend .btn-lg;
+  }
+}

@@ -1,7 +1,5 @@
-#home
-  | POTETI stands for Portal Of TEchnology TIps.
-
-  - if user_signed_in?
-    .items
-      - current_user.tips.each do |tip|
-        .item = link_to tip.title, user_tip_path(tip, user_name: current_user.name)
+.jumbotron
+  h1 Poteti
+  p stands for Portal Of TEchnology TIps. stands for Portal Of TEchnology TIps. stands for Portal Of TEchnology TIps. stands for Portal Of TEchnology TIps. stands for Portal Of TEchnology TIps.
+  p.signup
+    = link_to 'Sign up now &raquo;'.html_safe, new_user_registration_path
