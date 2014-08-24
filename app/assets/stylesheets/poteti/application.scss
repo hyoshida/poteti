@@ -16,9 +16,8 @@ header {
     @extend .container;
     display: block;
 
-    h1 {
+    .logo {
       @extend .navbar-header;
-      margin: 0;
 
       & > a {
         @extend .navbar-brand;
