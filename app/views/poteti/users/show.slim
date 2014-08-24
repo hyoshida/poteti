@@ -1,15 +1,13 @@
 section.tips
   .tip.new
     - tip = @user.tips.new
-    = form_for tip do |f|
+    = form_for tip, remote: true do |f|
       p = f.text_field :title, placeholder: tip.class.human_attribute_name(:title)
       p = f.text_area :body, placeholder: tip.class.human_attribute_name(:body)
       = f.submit
 
   - @tips.each do |tip|
-    article.tip
-      h2.title = tip.title
-      .body = tip.body
+    = render 'poteti/tips/show_with_folding', tip: tip
 
 aside
   section.user

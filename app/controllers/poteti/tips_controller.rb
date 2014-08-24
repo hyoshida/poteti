@@ -9,10 +9,15 @@ module Poteti
     def create
       @tip = current_user.tips.new
       @tip.attributes = tip_params
-      if @tip.save
-        redirect_to @tip
-      else
-        redirect_to tips_path
+
+      respond_to do |format|
+        if @tip.save
+          format.html { redirect_to @tip, notice: 'Tip was successfully created.' }
+          format.js   { render status: :created, location: @tip }
+        else
+          format.html { redirect_to tips_path }
+          format.js   { render json: @tip.errors, status: :unprocessable_entity }
+        end
       end
     end
 
