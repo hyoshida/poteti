@@ -3,7 +3,7 @@ module Poteti
     def show
       @user = User.joins(:tips).find_by(name: params[:name])
       fail ActiveRecord::RecordNotFound unless @user
-      @tips = @user.tips
+      @tips = @user.tips.to_a
     end
   end
 end

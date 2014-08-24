@@ -6,7 +6,7 @@ section.tips
       p = f.text_area :body, placeholder: tip.class.human_attribute_name(:body)
       = f.submit
 
-  - @tips.all.each do |tip|
+  - @tips.each do |tip|
     article.tip
       h2.title = tip.title
       .body = tip.body
