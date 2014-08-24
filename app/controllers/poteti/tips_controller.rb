@@ -10,9 +10,9 @@ module Poteti
       @tip = current_user.tips.new
       @tip.attributes = tip_params
       if @tip.save
-        redirect_to user_tip_path(@tip, user_name: current_user.name)
+        redirect_to @tip
       else
-        redirect_to user_tips_path(user_name: current_user.name)
+        redirect_to tips_path
       end
     end
 
