@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 
 gem 'railties', '~> 4.1.4'
 gem 'activerecord', '~> 4.1.4', require: 'active_record'
