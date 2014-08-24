@@ -1,3 +1,5 @@
+require_dependency 'poteti/application_controller'
+
 module Poteti
   class TipsController < ApplicationController
     def show
@@ -12,10 +14,10 @@ module Poteti
 
       respond_to do |format|
         if @tip.save
-          format.html { redirect_to @tip, notice: 'Tip was successfully created.' }
-          format.js   { render status: :created, location: @tip }
+          format.html { redirect_to [current_user, @tip], notice: 'Tip was successfully created.' }
+          format.js   { render status: :created, location: [current_user, @tip] }
         else
-          format.html { redirect_to tips_path }
+          format.html { redirect_to user_tips_path }
           format.js   { render json: @tip.errors, status: :unprocessable_entity }
         end
       end
