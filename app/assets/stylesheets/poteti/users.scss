@@ -49,4 +49,18 @@ aside {
       @extend .btn-primary;
     }
   }
+
+  & > a {
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: inherit;
+      text-decoration: inherit;
+    }
+
+    &:hover .tip {
+      background-color: #eee;
+    }
+  }
 }

@@ -7,7 +7,8 @@ section.tips
       = f.submit
 
   - @tips.each do |tip|
-    = render 'poteti/tips/show_with_folding', tip: tip
+    = link_to tip do
+      = render 'poteti/tips/show_with_folding', tip: tip
 
 aside
   section.user
