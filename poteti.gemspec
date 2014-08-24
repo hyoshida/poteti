@@ -20,6 +20,8 @@ Gem::Specification.new do |s|
   s.add_dependency 'slim'
   s.add_dependency 'devise'
   s.add_dependency 'activeadmin'
+  s.add_dependency 'rails-assets-jquery'
+  s.add_dependency 'rails-assets-bootstrap-sass'
 
   s.add_development_dependency 'pg'
   s.add_development_dependency 'rubocop'

@@ -6,4 +6,6 @@ html
     = javascript_include_tag "poteti/application"
     = csrf_meta_tags
   body
-    == yield
+    = render 'layouts/poteti/header'
+    .container
+      == yield

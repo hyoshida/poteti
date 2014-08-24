@@ -6,9 +6,11 @@ Poteti::Engine.routes.draw do
   # Because ActiveAdmin not supported nested namespace...
   # refs: https://github.com/activeadmin/active_admin/issues/615
   #
-  devise_for :users, class_name: 'Poteti::User'
+  devise_for :users, class_name: 'Poteti::User', module: :devise
 
   resources :users, param: :name do
     resources :tips
   end
+
+  root to: 'home#index'
 end
