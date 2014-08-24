@@ -1,3 +1,19 @@
-#users_show
-  .email
-    = @user.email
+section.tips
+  .tip.new
+    - tip = @user.tips.new
+    = form_for tip, url: user_tips_path(user_name: @user.name) do |f|
+      p = f.text_field :title, placeholder: tip.class.human_attribute_name(:title)
+      p = f.text_area :body, placeholder: tip.class.human_attribute_name(:body)
+      = f.submit
+
+  - @tips.all.each do |tip|
+    article.tip
+      h2.title = tip.title
+      .body = tip.body
+
+aside
+  section.user
+    .name
+      = @user.name
+    .email
+      = @user.email

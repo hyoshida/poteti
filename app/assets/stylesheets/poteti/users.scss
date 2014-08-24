@@ -1,0 +1,52 @@
+@import 'bootstrap-sass';
+
+aside {
+  @extend .col-md-4;
+
+  section {
+    margin-bottom: 1.5em;
+    padding: 1.5em;
+    border: 1px solid #ccc;
+  }
+
+  .user {
+    .name {
+      font-size: xx-large;
+    }
+
+    .email:before {
+      content: 'email: ';
+      color: #aaa;
+      font-style: italic;
+    }
+  }
+}
+
+.tips {
+  @extend .col-md-8;
+
+  .tip {
+    margin-bottom: 1.5em;
+    padding: 1.5em;
+    border: 1px solid #ccc;
+
+    h2 {
+      margin: 0;
+      margin-bottom: 0.5em;
+      padding-bottom: 0.5em;
+      border-bottom: 1px solid #ddd;
+    }
+  }
+
+  .tip.new {
+    input[type='text'],
+    textarea {
+      @extend .form-control;
+    }
+
+    input[type='submit'] {
+      @extend .btn;
+      @extend .btn-primary;
+    }
+  }
+}
