@@ -1,11 +1,9 @@
 source 'https://rubygems.org'
-source 'https://rails-assets.org'
 
 gem 'railties', '~> 4.1.4'
 gem 'activerecord', '~> 4.1.4', require: 'active_record'
 gem 'rspec-rails', '~> 3.0.1'
 
-gem 'sass-rails', github: 'rails/sass-rails'
 gem 'activeadmin', github: 'gregbell/active_admin'
 
 gemspec path: '../'

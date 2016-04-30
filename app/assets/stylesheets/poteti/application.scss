@@ -1,7 +1,8 @@
 //= require_tree .
 //= require_self
 
-@import 'bootstrap-sass';
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
 
 body {
   padding-top: 70px;

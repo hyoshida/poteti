@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-source 'https://rails-assets.org'
 
 git 'git://github.com/rails/rails.git' do
   gem 'railties'

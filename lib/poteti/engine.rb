@@ -1,8 +1,9 @@
 require 'slim'
 require 'devise'
 require 'activeadmin'
-require 'rails-assets-jquery'
-require 'rails-assets-bootstrap-sass'
+require 'jquery-rails'
+require 'sass-rails'
+require 'bootstrap-sass'
 
 module Poteti
   class Engine < ::Rails::Engine
