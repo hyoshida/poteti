@@ -1,19 +1,21 @@
 describe Poteti::UsersController do
   render_views
 
-  before { request }
-
   describe "GET 'show'" do
     let(:user) { FactoryGirl.create(:poteti_user) }
-    let(:request) { poteti_get :show, name: user.name }
 
-    it { expect(response).to be_success }
+    it 'has success' do
+      poteti_get :show, name: user.name
+      expect(response).to be_success
+    end
 
     it 'assigns @user' do
+      poteti_get :show, name: user.name
       expect(assigns(:user)).to eq(user)
     end
 
     it 'renders the show templete' do
+      poteti_get :show, name: user.name
       expect(response).to render_template(:show)
     end
   end

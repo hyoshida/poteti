@@ -13,5 +13,9 @@ module Poteti
     devise(*DEVISE_OPTIONS)
 
     has_many :tips
+
+    def to_param
+      name
+    end
   end
 end

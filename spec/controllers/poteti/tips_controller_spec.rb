@@ -1,5 +1,6 @@
 describe Poteti::TipsController do
   render_views
+  sing_in_user
 
   before { request }
 
