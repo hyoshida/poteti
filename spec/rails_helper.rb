@@ -49,6 +49,8 @@ RSpec.configure do |config|
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
 
+  config.include Devise::TestHelpers, type: :controller
+  config.extend Poteti::ControllerMacros, type: :controller
   # for Engine contoller test
   config.include Poteti::ControllerRequests, type: :controller
 end

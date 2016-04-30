@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :poteti_user, class: Poteti::User do
-    name 'john'
-    email 'john@example.com'
+    sequence(:name) { |n| "user+#{n.next}" }
+    sequence(:email) { |n| "user+#{n.next}@example.com" }
     password 'password'
 
     trait :with_tip do
