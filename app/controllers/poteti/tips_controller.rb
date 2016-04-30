@@ -3,14 +3,13 @@ require_dependency 'poteti/application_controller'
 module Poteti
   class TipsController < ApplicationController
     def show
-      @tip = Tip.joins(:user).merge(User.where(name: params[:user_name])).find_by(id: params[:id])
-      fail ActiveRecord::RecordNotFound unless @tip
+      users = Poteti::User.where(name: params[:user_name])
+      @tip = Poteti::Tip.joins(:user).merge(users).find_by!(id: params[:id])
       @user = @tip.user
     end
 
     def create
-      @tip = current_user.tips.new
-      @tip.attributes = tip_params
+      @tip = current_user.tips.new(tip_params)
 
       respond_to do |format|
         if @tip.save
